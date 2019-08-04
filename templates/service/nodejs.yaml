@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecsdemo-nodejs
+  name: helmdemo-nodejs
 spec:
   selector:
-    app: ecsdemo-nodejs
+    app: helmdemo-nodejs
   ports:
    -  protocol: TCP
       port: 80
