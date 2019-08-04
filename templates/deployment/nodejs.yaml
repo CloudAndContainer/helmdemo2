@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecsdemo-nodejs
+  name: helmdemo-nodejs
   labels:
-    app: ecsdemo-nodejs
+    app: helmdemo-nodejs
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ecsdemo-nodejs
+      app: helmdemo-nodejs
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: ecsdemo-nodejs
+        app: helmdemo-nodejs
     spec:
       containers:
       - image: {{ .Values.nodejs.image }}:{{ .Values.version }}
         imagePullPolicy: Always
-        name: ecsdemo-nodejs
+        name: helmdemo-nodejs
         ports:
         - containerPort: 3000
           protocol: TCP
