@@ -1,7 +1,3 @@
-# Default values for eksdemo.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 # Release-wide Values
 replicas: 3
 version: 'latest'
