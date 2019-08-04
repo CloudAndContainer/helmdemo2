@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecsdemo-crystal
+  name: helmdemo-crystal
   labels:
-    app: ecsdemo-crystal
+    app: helmdemo-crystal
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ecsdemo-crystal
+      app: helmdemo-crystal
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: ecsdemo-crystal
+        app: helmdemo-crystal
     spec:
       containers:
       - image: {{ .Values.crystal.image }}:{{ .Values.version }}
         imagePullPolicy: Always
-        name: ecsdemo-crystal
+        name: helmdemo-crystal
         ports:
         - containerPort: 3000
           protocol: TCP
